@@ -8,7 +8,7 @@ Esse projeto visa criar uma interface de usuário para o pacote coursera-helper 
 
 Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se encarregará de instalar as dependências necessárias, moverá os arquivos construídos para a pasta program files do seu disco e criará um atalho na área de trabalho.
 
-**Código:**
+**Script:**
 ```powershell
 iex "& { $(curl -useb 'https://raw.githubusercontent.com/mathyc0de/coursera-downloader-gui/refs/heads/main/run.ps1') }"
 ```
@@ -17,14 +17,14 @@ iex "& { $(curl -useb 'https://raw.githubusercontent.com/mathyc0de/coursera-down
 
 Para usuários de Linux e usuários avançados do Windows, é possível instalar o downloader via pip:
 
-**Código:**
+**Script:**
 ```bash
 pip install git+https://github.com/mathyc0de/coursera-downloader-gui.git
 ```
 
 Execute o programa com:
 
-**Código:**
+**Alias:**
 ```bash
 coursera-downloader-gui
 ```
