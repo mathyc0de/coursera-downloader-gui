@@ -1,12 +1,32 @@
 from subprocess import run, Popen
 import os
 from src.utils.data_type import DownloadParameters
+import shutil
 
-if os.name == "nt":
+OS = os.name
+if OS == "nt":
     from subprocess import CREATE_NEW_CONSOLE
 else:
-    from subprocess import _USE_POSIX_SPAWN
-    CREATE_NEW_CONSOLE = _USE_POSIX_SPAWN
+    CREATE_NEW_CONSOLE = 0
+
+def run_in_new_terminal(command):
+    terminals = [
+        {'name': 'gnome-terminal', 'args': ['--']},
+        {'name': 'konsole', 'args': ['-e']},
+        {'name': 'terminator', 'args': ['-x']},
+        {'name': 'xterm', 'args': ['-e']}
+    ]
+
+    for term in terminals:
+        terminal_path = shutil.which(term['name'])
+        if terminal_path:
+            try:
+                full_command = [terminal_path] + term['args'] + command
+                return Popen(full_command)
+            except Exception as e:
+                print(f"Failed to start with {term['name']}: {e}")
+                continue
+    return None
 
 class CourseraDownloader:
     def __init__(self, cauth: str, download_parameters: DownloadParameters = DownloadParameters(), output_path: str = "./"):
@@ -38,8 +58,7 @@ class CourseraDownloader:
     def test_cauth(cauth: str) -> bool:
         output = run(["coursera-helper", "--cauth", cauth, "--list-courses"], capture_output=True).stderr.decode().splitlines()[2]
         return output.find("Error 403") == -1
-        
-
+    
 
     def __save_cauth(self):
         OS = os.name
@@ -79,11 +98,13 @@ class CourseraDownloader:
     def download_course(self, name: str):
         parameters = self.__parse_parameters()
         parameters.extend(["--path", self.output_path, name])
-        return Popen(parameters, creationflags=CREATE_NEW_CONSOLE)
+        if (OS == "nt"): return Popen(parameters, creationflags=CREATE_NEW_CONSOLE)
+        return run_in_new_terminal(parameters)
 
     def download_specialization(self, name: str):
         path = os.path.join(self.output_path, f"./{name}/")
         os.makedirs(path, exist_ok=True)
         parameters = self.__parse_parameters()
         parameters.extend(["--path", path, "--specialization", name])
-        return Popen(parameters, creationflags=CREATE_NEW_CONSOLE)
+        if (OS == "nt"): return Popen(parameters, creationflags=CREATE_NEW_CONSOLE)
+        return run_in_new_terminal(parameters)

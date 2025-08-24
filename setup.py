@@ -12,7 +12,8 @@ setup(
     install_requires=[
         'PyQt6',
         'coursera-helper @ git+https://github.com/mathyc0de/coursera-helper-py3.13.git',
-        'packaging'
+        'packaging',
+        'shutil'
     ],
     
     entry_points={
