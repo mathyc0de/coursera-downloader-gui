@@ -6,7 +6,7 @@ Esse projeto visa criar uma interface de usuário para o pacote coursera-helper 
 
 ## Requerimentos
 
-É necessário Python (3.9 ou superior) instalado no computador.
+É necessário Python (3.9 ou superior) e Git instalados no computador.
 
 ## Instruções de instalação Windows
 
@@ -51,7 +51,7 @@ This project aims to create a user interface for the coursera-helper package (a 
 
 ## Requeriments
 
-The installation of Python (3.9 or higher).
+The installation of Python (3.9 or higher) and Git is required.
 
 ## Windows Installation Instructions
 Copy the code provided below, which executes the run.ps1 script. This script will handle the installation of necessary dependencies and copy the executable file to desktop.
