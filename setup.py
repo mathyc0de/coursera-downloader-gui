@@ -13,7 +13,6 @@ setup(
         'PyQt6',
         'coursera-helper @ git+https://github.com/mathyc0de/coursera-helper-py3.13.git',
         'packaging',
-        'shutil'
     ],
     
     entry_points={
