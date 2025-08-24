@@ -5,8 +5,8 @@ from utils.data_type import DownloadParameters
 class CourseraDownloader:
     def __init__(self, cauth: str, download_parameters: DownloadParameters = DownloadParameters(), output_path: str = "./"):
         self.__cauth = cauth
-        self.__download_parameters = download_parameters
-        self.__output_path = output_path
+        self.download_parameters = download_parameters
+        self.output_path = output_path
         self.__save_cauth()
     
 
@@ -52,7 +52,7 @@ class CourseraDownloader:
         
 
     def __parse_parameters(self):
-        param = self.__download_parameters
+        param = self.download_parameters
         parsed = [
             "coursera-helper",
             "--ignore-formats", "html mspx",
@@ -60,7 +60,7 @@ class CourseraDownloader:
             "--cauth", self.__cauth,
             "--video-resolution", param.resolution.value,
             "--download-delay", str(param.download_delay),
-            "-sl", ",".join(sub.value for sub in param.subtitles),
+            "-sl", param.subtitles,
             "--download-notebooks" if param.download_notebooks else None,
             "--download-quizzes" if param.download_quizzes else None
         ]
@@ -72,14 +72,12 @@ class CourseraDownloader:
 
     def download_course(self, name: str):
         parameters = self.__parse_parameters()
-        parameters.extend(["--path", self.__output_path, name])
-        print(parameters)
+        parameters.extend(["--path", self.output_path, name])
         return Popen(parameters, creationflags=CREATE_NEW_CONSOLE)
 
     def download_specialization(self, name: str):
-        path = os.path.join(self.__output_path, f"./{name}/")
+        path = os.path.join(self.output_path, f"./{name}/")
         os.makedirs(path, exist_ok=True)
         parameters = self.__parse_parameters()
         parameters.extend(["--path", path, "--specialization", name])
-        print(parameters)
         return Popen(parameters, creationflags=CREATE_NEW_CONSOLE)

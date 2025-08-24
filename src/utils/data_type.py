@@ -17,4 +17,3 @@ class DownloadParameters:
     download_delay: int = 10
     download_notebooks: bool = True
     download_quizzes: bool = False
-    output_path: str = "./"
