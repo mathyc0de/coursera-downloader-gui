@@ -81,6 +81,7 @@ class CourseraDownloader:
         parsed = [
             "coursera-helper",
             "--ignore-formats", "html mspx",
+            "--disable-url-skipping",
             "--resume",
             "--cauth", self.__cauth,
             "--video-resolution", param.resolution.value,
