@@ -6,7 +6,7 @@ Esse projeto visa criar uma interface de usuário para o pacote coursera-helper 
 
 ## Requerimentos
 
-É Python (3.9 ou superior) e Git instalado no computador.
+É necessário Python (3.9 ou superior) e Git instalado no computador.
 
 ## Instruções de instalação Windows
 
