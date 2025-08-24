@@ -8,7 +8,19 @@ Esse projeto visa criar uma interface de usuário para o pacote coursera-helper 
 
 Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se encarregará de instalar as dependências necessárias, moverá os arquivos construídos para a pasta program files do seu disco e criará um atalho na área de trabalho.
 
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') }"
+**Código:**
+```powershell
+iex "& { $(curl -useb 'https://raw.githubusercontent.com/mathyc0de/coursera-downloader-gui/refs/heads/main/run.ps1') }"
+```
+
+## Instruções de instalação (Linux)
+
+O mesmo processo é feito no linux, copie o link abaixo e cole no terminal.
+
+**Código:**
+```bash
+curl -useb https://raw.githubusercontent.com/mathyc0de/coursera-downloader-gui/refs/heads/main/run.sh | bash
+```
 
 ## Usage
 
