@@ -1,7 +1,7 @@
 pip install git+https://github.com/mathyc0de/coursera-helper-py3.13
 Write-Host "Starting the download of Coursera Downloader Gui..."
 # Variáveis
-$programFiles = "${env:ProgramFiles}\coursera-downloader-gui"
+$userprofile = "$env:USERPROFILE\Coursera Downloader Gui"
 $desktop = [Environment]::GetFolderPath("Desktop")
 
 # Baixar a pasta usando GitHub API (zip da pasta)
@@ -18,15 +18,15 @@ $extractPath = "$env:TEMP\coursera-downloader-gui"
 $sourceFolder = Join-Path $extractPath "coursera-downloader-gui-main\build\"
 
 Write-Host "Creating link do destkop..."
-if (!(Test-Path $programFiles)) {
-    New-Item -ItemType Directory -Path $programFiles | Out-Null
+if (!(Test-Path $userprofile)) {
+    New-Item -ItemType Directory -Path $userprofile | Out-Null
 }
-Copy-Item -Path $sourceFolder\* -Destination $programFiles -Recurse -Force
+Copy-Item -Path $sourceFolder\* -Destination $userprofile -Recurse -Force
 
 $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut("$desktop\Coursera Downloader.lnk")
-$shortcut.TargetPath = $programFiles
-$shortcut.WorkingDirectory = $programFiles
+$shortcut.TargetPath = $userprofile
+$shortcut.WorkingDirectory = $userprofile
 $shortcut.Save()
 
 # Limpar arquivos temporários
