@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='coursera-downloader-gui-app',  # Um nome único para o seu pacote
+    name='coursera-downloader-gui',  # Um nome único para o seu pacote
     version='0.1.0',
     packages=find_packages(),
     author='Matheus Silveira',
