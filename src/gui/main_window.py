@@ -7,7 +7,7 @@ from src.downloader.coursera_downloader import CourseraDownloader
 import os
 
 
-DEFAULT_VIDEO_PATH = os.path.join(os.path.expanduser("~"), "Coursera Downloader")
+DEFAULT_VIDEO_PATH = os.path.join(os.path.expanduser("~"), "Downloads")
 os.makedirs(DEFAULT_VIDEO_PATH, exist_ok=True)
 TUTORIAL_PT = """
             <h1>Como obter o CAUTH (Português)</h1>
@@ -131,6 +131,7 @@ class MainWindow(QMainWindow):
         self.download_notebooks = QCheckBox("Donwload Notebooks")
         self.download_notebooks.setChecked(True)
         self.download_quizzes = QCheckBox("Download Quizzes")
+        self.download_quizzes.setChecked(True)
         self.resolution_selector = QComboBox()
         self.resolution_selector.addItems(["480p (SD)", "720p (HD)", "1080p (Full HD)"])
         self.resolution_selector.setCurrentIndex(1)
