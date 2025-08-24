@@ -205,6 +205,7 @@ class MainWindow(QMainWindow):
         self.download_notebooks = QCheckBox("Donwload Notebooks")
         self.download_notebooks.setChecked(True)
         self.download_quizzes = QCheckBox("Download Quizzes")
+        self.download_quizzes.setChecked(True)
         self.resolution_selector = QComboBox()
         self.resolution_selector.addItems(["480p (SD)", "720p (HD)", "1080p (Full HD)"])
         self.resolution_selector.setCurrentIndex(1)
