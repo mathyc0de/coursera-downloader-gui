@@ -1,6 +1,12 @@
-from subprocess import run, Popen, CREATE_NEW_CONSOLE
+from subprocess import run, Popen
 import os
 from src.utils.data_type import DownloadParameters
+
+if os.name == "nt":
+    from subprocess import CREATE_NEW_CONSOLE
+else:
+    from subprocess import _USE_POSIX_SPAWN
+    CREATE_NEW_CONSOLE = _USE_POSIX_SPAWN
 
 class CourseraDownloader:
     def __init__(self, cauth: str, download_parameters: DownloadParameters = DownloadParameters(), output_path: str = "./"):

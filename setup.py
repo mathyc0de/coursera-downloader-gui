@@ -11,7 +11,8 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=[
         'PyQt6',
-        'coursera-helper @ git+https://github.com/mathyc0de/coursera-helper-py3.13.git'
+        'coursera-helper @ git+https://github.com/mathyc0de/coursera-helper-py3.13.git',
+        'packaging'
     ],
     
     entry_points={
