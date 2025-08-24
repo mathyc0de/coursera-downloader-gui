@@ -15,7 +15,7 @@ $extractPath = "$env:TEMP\coursera-downloader-gui"
 [System.IO.Compression.ZipFile]::ExtractToDirectory($zipFile, $extractPath)
 
 # Caminho da pasta extraída
-$sourceFolder = Join-Path $extractPath "coursera-downloader-gui-main\build\"
+$sourceFolder = Join-Path $extractPath "coursera-downloader-gui-main\build\windows\"
 
 Write-Host "Creating link do destkop..."
 if (!(Test-Path $userprofile)) {
@@ -25,7 +25,7 @@ Copy-Item -Path $sourceFolder\* -Destination $userprofile -Recurse -Force
 
 $WshShell = New-Object -ComObject WScript.Shell
 $shortcut = $WshShell.CreateShortcut("$desktop\Coursera Downloader.lnk")
-$shortcut.TargetPath = $userprofile
+$shortcut.TargetPath = Join-Path $userprofile "main.exe"
 $shortcut.WorkingDirectory = $userprofile
 $shortcut.Save()
 
