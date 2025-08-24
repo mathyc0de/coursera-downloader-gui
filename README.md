@@ -4,6 +4,10 @@
 
 Esse projeto visa criar uma interface de usuário para o pacote coursera-helper (fork de coursera-dl), no qual tem como objetivo baixar vídeos, leituras e quizzes, notebooks e recursos em geral, dos cursos e especializações do website coursera. 
 
+## Requerimentos
+
+É necessário Python (3.9 ou superior) e Git instalado no computador.
+
 ## Instruções de instalação Windows
 
 Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se encarregará de instalar as dependências necessárias, moverá os arquivos construídos para a pasta program files do seu disco e criará um atalho na área de trabalho.
@@ -44,6 +48,10 @@ This project is licensed under the GPL License. See the LICENSE file for more de
 
 # English
 This project aims to create a user interface for the coursera-helper package (a fork of coursera-dl), which is designed to download videos, readings, quizzes, notebooks, and general resources from courses and specializations on the Coursera website.
+
+## Requeriments
+
+The installation of Python (3.9 or higher) and Git is necessary to use this app.
 
 ## Windows Installation Instructions
 Copy the code provided below, which executes the run.ps1 script. This script will handle the installation of necessary dependencies, move the built files to the Program Files folder on your drive, and create a desktop shortcut.
