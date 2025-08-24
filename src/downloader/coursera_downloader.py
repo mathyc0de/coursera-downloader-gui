@@ -1,6 +1,6 @@
 from subprocess import run, Popen, CREATE_NEW_CONSOLE
 import os
-from utils.data_type import DownloadParameters
+from src.utils.data_type import DownloadParameters
 
 class CourseraDownloader:
     def __init__(self, cauth: str, download_parameters: DownloadParameters = DownloadParameters(), output_path: str = "./"):

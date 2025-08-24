@@ -4,7 +4,7 @@
 
 Esse projeto visa criar uma interface de usuário para o pacote coursera-helper (fork de coursera-dl), no qual tem como objetivo baixar vídeos, leituras e quizzes, notebooks e recursos em geral, dos cursos e especializações do website coursera. 
 
-## Instruções de instalação (Windows)
+## Instruções de instalação Windows
 
 Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se encarregará de instalar as dependências necessárias, moverá os arquivos construídos para a pasta program files do seu disco e criará um atalho na área de trabalho.
 
@@ -13,13 +13,20 @@ Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se
 iex "& { $(curl -useb 'https://raw.githubusercontent.com/mathyc0de/coursera-downloader-gui/refs/heads/main/run.ps1') }"
 ```
 
-## Instruções de instalação (Linux)
+## Instruções de instalação Windows / Linux (avançado)
 
-O mesmo processo é feito no linux, copie o link abaixo e cole no terminal.
+Para usuários de Linux e usuários avançados do Windows, é possível instalar o downloader via pip:
 
 **Código:**
 ```bash
-curl -useb https://raw.githubusercontent.com/mathyc0de/coursera-downloader-gui/refs/heads/main/run.sh | bash
+pip install git+https://github.com/mathyc0de/coursera-downloader-gui.git
+```
+
+Execute o programa com:
+
+**Código:**
+```bash
+coursera-downloader-gui
 ```
 
 ## Usage

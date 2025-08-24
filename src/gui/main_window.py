@@ -2,8 +2,8 @@ from PyQt6.QtWidgets import (
     QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QMessageBox,
     QStackedWidget, QLineEdit, QFormLayout, QScrollArea, QCheckBox, QComboBox, QFileDialog, QProgressBar, QTextBrowser
 )
-from utils.data_type import DownloadParameters, Resolution, Subtitle
-from downloader.coursera_downloader import CourseraDownloader
+from src.utils.data_type import DownloadParameters, Resolution, Subtitle
+from src.downloader.coursera_downloader import CourseraDownloader
 import os
 
 
