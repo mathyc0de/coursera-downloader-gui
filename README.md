@@ -10,7 +10,7 @@ Esse projeto visa criar uma interface de usuário para o pacote coursera-helper 
 
 ## Instruções de instalação Windows
 
-Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se encarregará de instalar as dependências necessárias, moverá os arquivos construídos para a pasta program files do seu disco e criará um atalho na área de trabalho.
+Copie o código disponibilizado abaixo, no qual executa o script run.ps1, que se encarregará de instalar as dependências necessárias e colocará o executável na área de trabalho do pc.
 
 **Script:**
 ```powershell
@@ -54,7 +54,7 @@ This project aims to create a user interface for the coursera-helper package (a 
 The installation of Python (3.9 or higher).
 
 ## Windows Installation Instructions
-Copy the code provided below, which executes the run.ps1 script. This script will handle the installation of necessary dependencies, move the built files to the Program Files folder on your drive, and create a desktop shortcut.
+Copy the code provided below, which executes the run.ps1 script. This script will handle the installation of necessary dependencies and copy the executable file to desktop.
 
 **Script:**
 ```powershell
