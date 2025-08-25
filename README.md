@@ -2,7 +2,7 @@
 
 # Portuguese
 
-Esse projeto visa criar uma interface de usuário para o pacote coursera-helper (fork de coursera-dl), no qual tem como objetivo baixar vídeos, leituras, quizzes, notebooks e recursos em geral, dos cursos e especializações do website coursera. 
+Esse projeto visa criar uma interface de usuário para o pacote coursera-helper (fork de coursera-dl), no qual tem como objetivo baixar vídeos, leituras, quizzes, notebooks e recursos em geral dos cursos e especializações do website coursera. 
 
 ## Requerimentos
 
